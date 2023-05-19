@@ -1,6 +1,7 @@
 
 import React, { useContext } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import Swal from "sweetalert2";
+import { Navigate, useLoaderData } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../../Provider/AuthProvider';
 
@@ -25,8 +26,18 @@ const UpdatedToys = () => {
             .then((res) => res.json())
             .then((result) => {
                 console.log(result);
+                if(result.modifiedCount){
+                    Swal.fire({
+                      title: 'success!',
+                      text: 'coffee updated successfully',
+                      icon: 'success',
+                      confirmButtonTxt: 'Cool'
+                    })
+                    
+                  }
+                  Navigate('/myToys')
             });
-        console.log(data);
+        // console.log(data);
     };
     return (
         <div className="add-job-container mt-52">

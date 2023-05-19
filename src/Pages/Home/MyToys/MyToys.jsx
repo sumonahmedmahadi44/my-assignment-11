@@ -1,30 +1,54 @@
 import React, { useContext, useEffect, useState } from 'react';
+import Swal from "sweetalert2";
 import ShowMyToys from './ShowMyToys';
 import { AuthContext } from '../../../Provider/AuthProvider';
 
 
 const MyToys = () => {
     const { user } = useContext(AuthContext)
-    const [myToys, setToys] = useState([]);
-    const [loadedUser, setUser] = useState(myToys)
+    const [myToys, setMyToys] = useState([]);
+    // const [loadedUser, setLoadedUser] = useState([]);
+
     const handleDelete = (_id) => {
-        console.log(_id);
-        fetch(`http://localhost:5000/post-toys/${_id}`, {
+        
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed){
+                fetch(`http://localhost:5000/post-toys/${_id}`, {
             method: "DELETE"
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
-                const remaining = loadedUser.filter(users => users._id !== _id)
-                console.log(remaining);
-                setUser(remaining);
+                
+                if(data.deletedCount > 0){
+                    Swal.fire(
+                        'Deleted!',
+                        'Your Coffee has been deleted.',
+                        'success'
+                      );
+                      const remaining = myToys.filter(users => users._id !== _id);
+                      setMyToys(remaining);
+                      
+                }
+                
+               
+               
             })
+            }
+        })
     }
     useEffect(() => {
         fetch(`http://localhost:5000/myToys/${user?.email}`)
             .then(res => res.json())
             .then(data => {
-                setToys(data)
+                setMyToys(data)
             })
     }, [user])
     return (
