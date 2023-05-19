@@ -10,6 +10,7 @@ import AllToys from "../Pages/Home/AllToys/AllToys";
 import MyToys from "../Pages/Home/MyToys/MyToys";
 import UpdatedToys from "../Pages/Home/UpdatedToys/UpdatedToys";
 import SingleToyDetails from "../Pages/Home/SingleToyDetails/SingleToyDetails";
+import Banner from "../Pages/Home/Home/Banner";
 
 
 
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
         {
             path: '/',
             element: <Home></Home>
+      },
+        {
+            path: '/',
+            element: <Banner></Banner>
       },
         {
             path: '/',

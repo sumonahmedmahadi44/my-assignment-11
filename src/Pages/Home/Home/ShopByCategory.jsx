@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
-const ShopByCategory = ({toy}) => {
-    const { _id, price, toyName, userName, subCategory, ratings, quantity } = toy
+const ShopByCategory = () => {
+    const [toys, setToys] = useState([]);
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/allToy/${subCategory}`)
+            .then(res => res.json())
+            .then(data => {
+                setToys(data);
+            })
+    }, []);
     return (
         <div>
             <Tabs>
     <TabList>
-      <Tab>Title 1</Tab>
-      <Tab>Title 2</Tab>
+      <Tab>{subCategory}</Tab>
+      <Tab>{subCategory}</Tab>
+      <Tab>{subCategory}</Tab>
     </TabList>
 
     <TabPanel>
@@ -17,6 +26,9 @@ const ShopByCategory = ({toy}) => {
     </TabPanel>
     <TabPanel>
       <h2>Any content 2</h2>
+    </TabPanel>
+    <TabPanel>
+      <h2>Any content 3</h2>
     </TabPanel>
   </Tabs>
         </div>
