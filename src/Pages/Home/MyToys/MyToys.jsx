@@ -7,6 +7,7 @@ import { AuthContext } from '../../../Provider/AuthProvider';
 const MyToys = () => {
     const { user } = useContext(AuthContext)
     const [myToys, setMyToys] = useState([]);
+    const [sort,setSort] = useState('');
     // const [loadedUser, setLoadedUser] = useState([]);
 
     const handleDelete = (_id) => {
@@ -45,16 +46,18 @@ const MyToys = () => {
         })
     }
     useEffect(() => {
-        fetch(`http://localhost:5000/myToys/${user?.email}`)
+        fetch(`http://localhost:5000/myToys/${user?.email}?price=${sort}`)
             .then(res => res.json())
             .then(data => {
                 setMyToys(data)
             })
-    }, [user])
+    }, [user,sort])
     return (
         <div>
             <div className="mt-8">
                 <h2 className="text-center text-4xl font-bold  text-orange-400">My Toys {myToys.length}</h2>
+                <button className='btn btn-secondary mx-4' onClick={()=>setSort('ascending')}>Ascending by Price</button>
+                <button className='btn btn-secondary mx-4' onClick={()=>setSort('descending')}>Descending by Price</button>
 
 
                 <div className="overflow-x-auto mt-8  w-full">

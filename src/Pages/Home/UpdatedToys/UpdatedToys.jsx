@@ -17,6 +17,7 @@ const UpdatedToys = () => {
     console.log(toys);
     // const { _id, userName, image, postedBy, quantity, description, price, toyName, subCategory, ratings } = toys;
     const onSubmit = (data) => {
+        
 
         fetch(`http://localhost:5000/post-toys/${toys._id}`, {
             method: "PUT",
@@ -40,87 +41,93 @@ const UpdatedToys = () => {
         // console.log(data);
     };
     return (
-        <div className="add-job-container mt-52">
-            <div className="add-job row">
+        <div className="p-4 h-full flex justify-center items-center gap-10 mt-10">
+            <div className="h-full">
                 <div className="col-md-8">
-                    <form onSubmit={handleSubmit(onSubmit)}>
+                    <form className='md:p-20  w-full border border-black h-full' onSubmit={handleSubmit(onSubmit)}>
                         {errors.exampleRequired && <span>This field is required</span>}
 
 
-                        <input
-                            className="text-input"
+                       <div className='text-center'> <span className="font-bold text-xl">Image :</span> <input
+                            className=" border border-black p-2 bg-pink-200 "
                             {...register("image")}
                             placeholder="image link"
-                            type="url"
                             defaultValue="https://images.pexels.com/photos/2528118/pexels-photo-2528118.jpeg?auto=compress&cs=tinysrgb&w=600"
-                        />
+                            type="url"
+                            
+                        /></div>
 
                         <div className="form-control">
 
                             <label className="label">
-                                <span className="label-text">Sub Category</span>
+                                <span className="font-bold text-xl">Sub category</span>
                             </label>
-                            <select className="text-input  input input-bordered" {...register("subCategory")}>
-                                <option value="Engineering">engineering</option>
-                                <option value="Editor">Editor</option>
-                                <option value="writer">Writer</option>
+                            <select className="border border-black p-2 bg-pink-200" {...register("subcategory")}>
+                                <option value="Engineering">Sports Car</option>
+                                <option value="Editor">Friction Cars</option>
+                                <option value="writer">Remote Control Cars</option>
                             </select>
                         </div>
 
 
-                        <input
-                            className="text-input"
+                        <div className='md:flex justify-around items-center'><div><span className="font-bold text-xl">Toy Name :</span> <input
+                            className="border border-black p-2 bg-pink-200 mt-4 me-4"
                             {...register("toyName")}
                             placeholder="Toy name"
                             type="name"
-                        />
-                        <input
-                            className="text-input"
+                        /></div>
+                       <div><span className="font-bold text-xl">Toy Price :</span> <input
+                            className="border border-black p-2 bg-pink-200 mt-4 me-4"
                             {...register("price")}
                             placeholder="Toy Price"
                             type="number"
-                        />
-                        <input
-                            className="text-input"
+                        /></div></div>
+                        <div className='md:flex justify-around items-center'>
+                        <div><span className="font-bold text-xl">Email :</span><input
+                            className="border border-black p-2 bg-pink-200 mt-4 me-4"
                             value={user?.email}
                             {...register("postedBy")}
                             placeholder="Your email"
                             type="email"
-                        />
-                        <input
-                            className="text-input"
+                        /></div>
+                        <div><span className="font-bold text-xl">DisplayName :</span><input 
+                            className="border border-black p-2 bg-pink-200 mt-4 me-4"
                             value={user?.displayName}
                             {...register("userName")}
                             placeholder="Your name"
                             type="name"
-                        />
+                        /></div>
+                        </div>
 
-                        <input
-                            className="text-input"
-                            {...register("description")}
-                            placeholder="description"
-                        />
-                        <input
-                            className="text-input"
+                        <div className='md:flex justify-around items-center'>
+                            <div>
+                            <span className="font-bold text-xl">Quantity :</span><input
+                            className="border border-black p-2 bg-pink-200 mt-4 me-4"
                             {...register("quantity")}
                             placeholder="Available Quantity"
-                        />
-                        <input
-                            className="text-input"
+                        /></div>
+                        <div>
+                        <span className="font-bold text-xl">Ratings :</span> <input
+                            className="border border-black p-2 bg-pink-200 mt-4 me-4"
                             {...register("ratings")}
                             placeholder="Ratings"
                         />
+                        </div>
+                        </div>
 
-                        <input className="submit-btn" value="Update Toys" type="submit" />
+                        <div>
+                        <span className="font-bold text-xl">Description :</span> <input
+                            className="border w-full mb-4 border-black p-2 bg-pink-200 mt-4 me-4"
+                            {...register("description")}
+                            placeholder="description"
+                        />
+                        </div>
+                        <div className='text-center'>
+                        <input className="btn w-32 bg-amber-400 text-black p-2 " value="Update Toys" type="submit" />
+                        </div>
                     </form>
                 </div>
-                {/* <div className="col-md-4">
-                <img
-                    className="w-100"
-                    src="https://i.ibb.co/rthZ75K/pngtree-job-vacancy-with-join-our-team-recruitment-vector-design-png-image-6419066-removebg-preview.png"
-                    alt=""
-                />
-            </div> */}
+                
             </div>
         </div>
     );

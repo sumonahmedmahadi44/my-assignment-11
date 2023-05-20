@@ -3,7 +3,7 @@ import React from 'react';
 const ExtraSec1 = () => {
     return (
         <div className='my-8 '>
-            <h1 className='mb-4 text-center font-extrabold text-3xl text-gray-500 border border-slate-900 border-spacing-2 bg-pink-200 rounded-2xl'>Populer Section !!!</h1>
+            <h1 className='mb-4 text-center font-extrabold text-4xl p-3 text-gray-500 border border-slate-900 border-spacing-2 bg-pink-200 rounded-2xl'>Populer Section !!!</h1>
             <div className="stats shadow w-full">
   
   <div className="bg-slate-200 p-4" >

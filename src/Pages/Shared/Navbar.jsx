@@ -93,7 +93,7 @@ const Navbar = () => {
                   </li>
                   <li className='text-black  hover:bg-white hover:p-1 hover:rounded-md font-b'>
                       {user ?
-                          <img title={user.displayName} className='w-10 rounded' src={user.photoURL} alt="" /> : ''
+                          <img title={user.displayName} className='w-10 rounded-full h-12 w-12' src={user.photoURL} alt="" /> : ''
 
                       }
                   </li>
