@@ -19,7 +19,7 @@ const UpdatedToys = () => {
     const onSubmit = (data) => {
         
 
-        fetch(`http://localhost:5000/post-toys/${toys._id}`, {
+        fetch(`https://unique-car-toys-server.vercel.app/post-toys/${toys._id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data),

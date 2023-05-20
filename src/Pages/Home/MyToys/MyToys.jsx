@@ -22,7 +22,7 @@ const MyToys = () => {
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.isConfirmed){
-                fetch(`http://localhost:5000/post-toys/${_id}`, {
+                fetch(`https://unique-car-toys-server.vercel.app/post-toys/${_id}`, {
             method: "DELETE"
         })
             .then(res => res.json())
@@ -46,7 +46,7 @@ const MyToys = () => {
         })
     }
     useEffect(() => {
-        fetch(`http://localhost:5000/myToys/${user?.email}?price=${sort}`)
+        fetch(`https://unique-car-toys-server.vercel.app/myToys/${user?.email}?price=${sort}`)
             .then(res => res.json())
             .then(data => {
                 setMyToys(data)

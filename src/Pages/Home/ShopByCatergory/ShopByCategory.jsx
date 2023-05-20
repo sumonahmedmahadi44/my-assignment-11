@@ -14,7 +14,7 @@ const ShopByCategory = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allToy/${categories}`)
+        fetch(`https://unique-car-toys-server.vercel.app/allToy/${categories}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);

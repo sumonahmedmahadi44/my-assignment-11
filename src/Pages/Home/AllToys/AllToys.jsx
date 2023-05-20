@@ -8,7 +8,7 @@ const AllToys = () => {
     const [toys, setToys] = useState([]);
     const [search, setSearch] = useState('');
     useEffect(() => {
-        fetch('http://localhost:5000/allToy')
+        fetch('https://unique-car-toys-server.vercel.app/allToy')
             .then(res => res.json())
             .then(data => {
                 setToys(data);
@@ -17,7 +17,7 @@ const AllToys = () => {
 
 
     const handleSearchBtn = () => {
-        fetch(`http://localhost:5000/searchByName/${search}`)
+        fetch(`https://unique-car-toys-server.vercel.app/searchByName/${search}`)
             .then(res => res.json())
             .then(data => {
                 setToys(data);

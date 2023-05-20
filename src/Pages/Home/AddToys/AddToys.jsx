@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const AddToys = () => {
     const { user } = useContext(AuthContext);
@@ -12,7 +13,7 @@ const AddToys = () => {
     } = useForm();
     const onSubmit = (data) => {
 
-        fetch("http://localhost:5000/post-toys", {
+        fetch("https://unique-car-toys-server.vercel.app/post-toys", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data),
@@ -20,6 +21,15 @@ const AddToys = () => {
             .then((res) => res.json())
             .then((result) => {
                 console.log(result);
+                if(result.insertedId){
+                    Swal.fire({
+                      title: 'success!',
+                      text: 'coffee Added successfully',
+                      icon: 'success',
+                      confirmButtonTxt: 'Cool'
+                    })
+                    
+                  }
             });
         console.log(data);
     };
