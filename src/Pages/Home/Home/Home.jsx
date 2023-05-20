@@ -1,22 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import ShopByCategory from './ShopByCategory';
+import React from 'react'
+import Banner from './Banner';
+import ShopByCategory from '../ShopByCatergory/ShopByCategory';
+import Gallery from './Gallery';
+import ExtraSec1 from './ExtraSec1';
 
 const Home = () => {
-    const [toys, setToys] = useState([]);
-    useEffect(() => {
-        fetch('http://localhost:5000/subCategory')
-            .then(res => res.json())
-            .then(data => {
-                setToys(data);
-            })
-    }, []);
+    
     return (
         <div>
-            <h1>There are :{toys.length} Toys</h1>
-          
-            {
-                toys.map(toy =><ShopByCategory key={toy._id} toy = {toy}></ShopByCategory> )
-            }
+            <Banner></Banner>
+            <Gallery></Gallery>
+         <ShopByCategory></ShopByCategory>
+         <ExtraSec1></ExtraSec1>
             
         </div>
     );

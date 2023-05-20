@@ -35,7 +35,7 @@ const UpdatedToys = () => {
                     })
                     
                   }
-                  Navigate('/myToys')
+                 
             });
         // console.log(data);
     };

@@ -53,9 +53,9 @@ const AddToys = () => {
                         <div className="form-control">
 
                             <label className="label">
-                                <span className="label-text">Sub Category</span>
+                                <span className="label-text">Sub category</span>
                             </label>
-                            <select className="text-input  input input-bordered" {...register("subCategory")}>
+                            <select className="text-input  input input-bordered" {...register("subcategory")}>
                                 <option value="Engineering">engineering</option>
                                 <option value="Editor">Editor</option>
                                 <option value="writer">Writer</option>
@@ -109,13 +109,7 @@ const AddToys = () => {
                         <input className="submit-btn" value="Add Toys" type="submit" />
                     </form>
                 </div>
-                {/* <div className="col-md-4">
-                    <img
-                        className="w-100"
-                        src="https://i.ibb.co/rthZ75K/pngtree-job-vacancy-with-join-our-team-recruitment-vector-design-png-image-6419066-removebg-preview.png"
-                        alt=""
-                    />
-                </div> */}
+                
             </div>
         </div>
     );
