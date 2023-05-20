@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const ShowMyToys = ({ myToy, index,handleDelete }) => {
-    const { _id, userName, image, postedBy, quantity, description, price, toyName, subCategory, ratings } = myToy;
+    const { _id, userName, image, postedBy, quantity, description, price, toyName,  ratings } = myToy;
    
     return (
         <tr>
 
-            <td>{index + 1}</td>
-            <td>
+            <td className='border border-black'>{index + 1}</td>
+            <td className='border border-black'>
 
                 <div className="avatar">
                     <div className="mask mask-squircle w-12 h-12">
@@ -17,21 +17,21 @@ const ShowMyToys = ({ myToy, index,handleDelete }) => {
 
                 </div>
             </td>
-            <td>{toyName}</td>
-            <td>
+            <td className='bg-pink-200 border border-black'>{toyName}</td>
+            <td className='border border-black'>
                 {userName}
 
             </td>
-            <td>{postedBy}</td>
-            <td>{price}</td>
-            <td>{ratings}</td>
-            <td>{quantity}</td>
-            <th>
-                <Link to={`/updatedToys/${_id}`}> <button className="btn btn-ghost btn-xs">Update</button></Link>
+            <td className='bg-pink-200 border border-black'>{postedBy}</td>
+            <td className='border border-black'>{price}</td>
+            <td className='border border-black'>{ratings}</td>
+            <td  className='bg-pink-200 border border-black'>{quantity}</td>
+            <th className='border border-black'>
+                <Link to={`/updatedToys/${_id}`}> <button className="btn bg-pink-200 text-black btn-xs">Update</button></Link>
 
             </th>
-            <th>
-                <button onClick={() => handleDelete(_id)} className="btn btn-ghost btn-xs">Delete</button>
+            <th className='border border-black'>
+                <button onClick={() => handleDelete(_id)} className="btn bg-pink-200 text-black  btn-xs">Delete</button>
             </th>
         </tr>
     );

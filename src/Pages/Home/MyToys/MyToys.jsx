@@ -55,40 +55,35 @@ const MyToys = () => {
     return (
         <div>
             <div className="mt-8">
-                <h2 className="text-center text-4xl font-bold  text-orange-400">My Toys {myToys.length}</h2>
+                <h2 className="text-center text-4xl font-bold  text-pink-400 border  border-black border-dashed mb-4 p-1 bg-emerald-200" >My Toys ({myToys.length})</h2>
                 <button className='btn btn-secondary mx-4' onClick={()=>setSort('ascending')}>Ascending by Price</button>
                 <button className='btn btn-secondary mx-4' onClick={()=>setSort('descending')}>Descending by Price</button>
 
 
                 <div className="overflow-x-auto mt-8  w-full">
-                    <table className="table w-full">
+                    <table className="table w-full mb-10">
                         {/* head */}
                         <thead>
                             <tr>
-                                <th>
+                                <th className='bg-pink-200 border border-black'>
                                     <button className="btn btn-sm btn-circle">
                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
                                     </button>
                                 </th>
-                                <th>Toy Photo</th>
-                                <th>Toy Name</th>
-                                <th>Seller Name</th>
-                                <th>Seller email</th>
-                                <th>Price</th>
-                                <th>Rating</th>
-                                <th>Quantity</th>
-                                <th>Update</th>
-                                <th>Delete</th>
+                                <th className='bg-pink-200 border border-black'>Toy Photo</th>
+                                <th className='bg-pink-200 border border-black'>Toy Name</th>
+                                <th className='bg-pink-200 border border-black'>Seller Name</th>
+                                <th className='bg-pink-200 border border-black'>Seller email</th>
+                                <th className='bg-pink-200 border border-black'>Price</th>
+                                <th className='bg-pink-200 border border-black'>Rating</th>
+                                <th className='bg-pink-200 border border-black'>Quantity</th>
+                                <th className='bg-pink-200 border border-black'>Update</th>
+                                <th className='bg-pink-200 border border-black'>Delete</th>
                             </tr>
                         </thead>
                         <tbody>
 
-                            {/* {
-                                myToys.map((myToyTable, idx) => <MyToyTable
-                                    myToyTable={myToyTable}
-                                    idx={idx}
-                                ></MyToyTable>)
-                            } */}
+                            
 
                             {
                                 myToys.map((myToy, index) => <ShowMyToys

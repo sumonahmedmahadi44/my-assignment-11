@@ -44,10 +44,10 @@ const AddToys = () => {
                             <label className="label">
                                 <span className="font-bold text-xl">Sub category</span>
                             </label>
-                            <select className="border border-black p-2 bg-pink-200" {...register("subcategory")}>
-                                <option value="Engineering">Sports Car</option>
-                                <option value="Editor">Friction Cars</option>
-                                <option value="writer">Remote Control Cars</option>
+                            <select className="text-input  input input-bordered" {...register("subCategory")}>
+                                <option value="sportsCar">Sports car</option>
+                                <option value="offRoadCar">Off Road Car</option>
+                                <option value="remoteCar">Remote Car</option>
                             </select>
                         </div>
 

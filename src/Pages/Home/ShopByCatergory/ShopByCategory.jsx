@@ -22,79 +22,87 @@ const ShopByCategory = () => {
             });
     }, [])
 
-    const marvelCars = categories.filter((item) => item.subcategory === 'Engineering')
-    console.log(marvelCars);
-    const tarzenCar = categories.filter((item) => item.subcategory === 'writer')
-    const fantasyCar = categories.filter((item) => item.subcategory === 'Editor')
+    const SportsCar = categories.filter((item) => item.subCategory === 'sportsCar')
+    const OffRoadCar = categories.filter((item) => item.subCategory === 'offRoadCar')
+    const RemoteCar = categories.filter((item) => item.subCategory === 'remoteCar')
     return (
+       
         <div>
-            <div>
-            <h2>Shop by Category</h2>
+            <h2 className='text-center text-4xl font-bold  text-pink-400 border  border-black border-dashed mb-4 p-1 bg-emerald-200 mt-4'>Shop by Category</h2>
            
 
             <Tabs>
               
-                <TabList>
+                <TabList className='flex justify-center gap-5 '>
                     {
-                        marvelCars.slice(0, 1).map((category, index) => (
-                            <Tab className='btn btn-primary' key={index}>{category.subcategory}</Tab>
+                        SportsCar.slice(0, 1).map((category, index) => (
+                            <Tab className='btn btn-primary' key={index}>{category.subCategory}</Tab>
                         ))
                     }
                     {
-                        tarzenCar.slice(0, 1).map((category, index) => (
-                            <Tab className='btn btn-primary' key={index}>{category.subcategory}</Tab>
+                        OffRoadCar.slice(0, 1).map((category, index) => (
+                            <Tab className='btn btn-secondary' key={index}>{category.subCategory}</Tab>
                         ))
                     }
                     {
-                        fantasyCar.slice(0, 1).map((category, index) => (
-                            <Tab className='btn btn-primary' key={index}>{category.subcategory}</Tab>
+                        RemoteCar.slice(0, 1).map((category, index) => (
+                            <Tab className='btn btn-warning' key={index}>{category.subCategory}</Tab>
                         ))
                     }
                 </TabList>
 
 
-                <TabPanel>
-                    {marvelCars.slice(0, 2).map((category, index) => (
-                        <div>
-                            <img src={category.subcategory} alt={''} />
-                            <h3>{category.userName}</h3>
-                            <p>Price: {category.price}</p>
-                            <p>Rating: {category.ratings}</p>
-                            <p>Category: {category.subcategory}</p>
-                            <Link to={`/singleToys/${category._id}`}> <button className='btn btn-xs btn-primary'>View Details</button></Link>
-                        </div>
+                <TabPanel className='flex justify-center gap-5 my-7'>
+                    {SportsCar.slice(0, 2).map((category, index) => (
+                        // <div>
+                        //     <img src={category.subCategory} alt={''} />
+                        //     <h3>{category.userName}</h3>
+                        //     <p>Price: {category.price}</p>
+                        //     <p>Rating: {category.ratings}</p>
+                        //     <p>Category: {category.subCategory}</p>
+                        //     <Link to={`/singleToys/${category._id}`}> <button className='btn btn-xs btn-primary'>View Details</button></Link>
+                        // </div>
+                        <div className="card table w-96 h-64 bg-pink-200 shadow-xl image-full">
+  <figure><img className='object-cover' src={category.image} alt="Shoes" /></figure>
+  <div className="card-body">
+  <h3 className='text-xl font-bold '><span className='fonot-bold text-xl me-2 underline text-black'>UserName</span>:  {category.userName}</h3>
+                         <p className='text-xl font-bold '><span className='fonot-bold text-xl me-2 underline text-black'>Price</span>: {category.price}</p>
+                            <p className='text-xl font-bold '><span className='fonot-bold text-xl me-2 underline text-black'>Rating</span>: {category.ratings}</p>
+                            <p className='text-xl font-bold '><span className='fonot-bold text-xl me-2 underline text-black'>Category</span>: {category.subCategory}</p>
+                            <Link to={`/singleToys/${category._id}`}> <button className='btn bg-pink-200 text-black p-4'>View Details</button></Link>
+  </div>
+</div>
                     ))}
 
 
                 </TabPanel>
 
                 <TabPanel>
-                    {tarzenCar.slice(0, 2).map((category, index) => (
+                    {OffRoadCar.slice(0, 2).map((category, index) => (
                         <div>
-                            <img src={category.subcategory} alt={''} />
+                            <img src={category.subCategory} alt={''} />
                             <h3>{category.userName}</h3>
                             <p>Price: {category.price}</p>
                             <p>Rating: {category.ratings}</p>
-                            <p>Category: {category.subcategory}</p>
+                            <p>Category: {category.subCategory}</p>
                             <Link to={`/singleToys/${category._id}`}> <button className='btn btn-xs btn-primary'>View Details</button></Link>
                         </div>
                     ))}
                 </TabPanel>
 
                 <TabPanel>
-                    {fantasyCar.slice(0, 2).map((category, index) => (
+                    {RemoteCar.slice(0, 2).map((category, index) => (
                         <div>
-                            <img src={category.subcategory} alt={''} />
+                            <img src={category.subCategory} alt={''} />
                             <h3>{category.userName}</h3>
                             <p>Price: {category.price}</p>
                             <p>Rating: {category.ratings}</p>
-                            <p>Category: {category.subcategory}</p>
+                            <p>Category: {category.subCategory}</p>
                             <Link to={`/singleToys/${category._id}`}> <button className='btn btn-xs btn-primary'>View Details</button></Link>
                         </div>
                     ))}
                 </TabPanel>
             </Tabs>
-        </div>
         </div>
     );
 };
