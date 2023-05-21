@@ -51,22 +51,26 @@ const Navbar = () => {
                           AllToys
                       </NavLink>
                   </li>
-                  <li className='text-black  hover:bg-white hover:p-1 hover:rounded-md font-b'>
-                      <NavLink
-                          to='/myToys'
-                          className={({ isActive }) => (isActive ? 'active' : 'default')}
-                      >
-                          MyToys
-                      </NavLink>
-                  </li>
-                  <li className='text-black  hover:bg-white hover:p-1 hover:rounded-md font-b'>
-                      <NavLink
-                          to='/addToys'
-                          className={({ isActive }) => (isActive ? 'active' : 'default')}
-                      >
-                          AddToys
-                      </NavLink>
-                  </li>
+                  {
+                    user ? <li className='text-black  hover:bg-white hover:p-1 hover:rounded-md font-b'>
+                    <NavLink
+                        to='/myToys'
+                        className={({ isActive }) => (isActive ? 'active' : 'default')}
+                    >
+                        MyToys
+                    </NavLink>
+                </li> : ''
+                  }
+                  {
+                    user ? <li className='text-black  hover:bg-white hover:p-1 hover:rounded-md font-b'>
+                    <NavLink
+                        to='/addToys'
+                        className={({ isActive }) => (isActive ? 'active' : 'default')}
+                    >
+                        AddToys
+                    </NavLink>
+                </li> : ''
+                  }
 
 
 
@@ -152,22 +156,22 @@ const Navbar = () => {
                           AllToys
                       </NavLink>
                   </li>
-                  <li className='text-black  hover:bg-white hover:p-1 hover:rounded-md font-b'>
+                  {user ? <li className='text-black  hover:bg-white hover:p-1 hover:rounded-md font-b'>
                       <NavLink
                           to='/myToys'
                           className={({ isActive }) => (isActive ? 'active' : 'default')}
                       >
                           MyToys
                       </NavLink>
-                  </li>
-                  <li className='text-black  hover:bg-white hover:p-1 hover:rounded-md font-b'>
+                  </li> : ''}
+                  {user ? <li className='text-black  hover:bg-white hover:p-1 hover:rounded-md font-b'>
                       <NavLink
                           to='/addToys'
                           className={({ isActive }) => (isActive ? 'active' : 'default')}
                       >
                           AddToys
                       </NavLink>
-                  </li>
+                  </li> : ''}
 
                                       <li className='text-black  hover:bg-white hover:p-1 hover:rounded-md font-b'>
                                           

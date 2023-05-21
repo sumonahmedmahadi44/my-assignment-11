@@ -12,6 +12,7 @@ import UpdatedToys from "../Pages/Home/UpdatedToys/UpdatedToys";
 import SingleToyDetails from "../Pages/Home/SingleToyDetails/SingleToyDetails";
 import Banner from "../Pages/Home/Home/Banner";
 import Blog from "../Blogs/Blog";
+import ErrorPage from "../ErrorPage/ErrorPage";
 
 
 
@@ -19,6 +20,7 @@ import Blog from "../Blogs/Blog";
 const router = createBrowserRouter([
     {
       path: "/",
+      errorElement:<ErrorPage></ErrorPage>,
       element: <Main></Main>,
       children:[
         {

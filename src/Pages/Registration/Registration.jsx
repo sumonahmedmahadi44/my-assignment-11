@@ -3,8 +3,10 @@ import {  FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 import { Link,  useNavigate } from 'react-router-dom';
+import SetTitle from '../../Hooks/SetTitle';
 
 const Registration = () => {
+  SetTitle('registration')
     const [regError,setRegError] = useState('');
     const { createUser, loggedOut } = useContext(AuthContext);
     const navigate = useNavigate();

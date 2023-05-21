@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import Swal from "sweetalert2";
 import ShowMyToys from './ShowMyToys';
 import { AuthContext } from '../../../Provider/AuthProvider';
+import SetTitle from '../../../Hooks/SetTitle';
 
 
 const MyToys = () => {
@@ -11,7 +12,7 @@ const MyToys = () => {
     // const [loadedUser, setLoadedUser] = useState([]);
 
     const handleDelete = (_id) => {
-        
+        SetTitle('myToys')
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",

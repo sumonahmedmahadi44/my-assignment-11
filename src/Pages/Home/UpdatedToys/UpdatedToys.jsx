@@ -4,8 +4,10 @@ import Swal from "sweetalert2";
 import { Navigate, useLoaderData } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../../Provider/AuthProvider';
+import SetTitle from '../../../Hooks/SetTitle';
 
 const UpdatedToys = () => {
+    SetTitle('updateToys')
     const { user } = useContext(AuthContext);
 
     const {
