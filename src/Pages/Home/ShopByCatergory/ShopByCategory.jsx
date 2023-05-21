@@ -31,7 +31,7 @@ const ShopByCategory = () => {
             <h2 className='text-center text-4xl font-bold  text-pink-400 border  border-black border-dashed mb-4 p-1 bg-emerald-200 mt-4'>Shop by Category</h2>
            
 
-            <Tabs>
+            {/* <Tabs>
               
                 <TabList className='flex justify-center gap-5 '>
                     {
@@ -102,7 +102,7 @@ const ShopByCategory = () => {
                         </div>
                     ))}
                 </TabPanel>
-            </Tabs>
+            </Tabs> */}
         </div>
     );
 };
