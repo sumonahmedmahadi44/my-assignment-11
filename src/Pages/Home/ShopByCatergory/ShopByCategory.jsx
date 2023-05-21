@@ -3,8 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Provider/AuthProvider';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import Swal from 'sweetalert2';
 
 const ShopByCategory = () => {
     const { loader,user } = useContext((AuthContext))
@@ -30,7 +29,16 @@ const ShopByCategory = () => {
 
 
 
-    const notify = () => toast("Wow so easy!");
+    const handleShow = () => {
+        if (!user) {
+            Swal.fire({
+                title: 'Please Log in!',
+                text: 'When you log in then access this route',
+                icon: 'success',
+                confirmButtonTxt: 'Okay'
+            })
+        }
+    }
     return (
        
         <div>
@@ -75,7 +83,7 @@ const ShopByCategory = () => {
                          <p className='text-xl font-bold '><span className='fonot-bold text-xl me-2 underline text-black'>Price</span>: {category.price}</p>
                             <p className='text-xl font-bold '><span className='fonot-bold text-xl me-2 underline text-black'>Rating</span>: {category.ratings}</p>
                             <p className='text-xl font-bold '><span className='fonot-bold text-xl me-2 underline text-black'>Category</span>: {category.subCategory}</p>
-                            <Link to={`/singleToys/${category._id}`}> <button className='btn bg-pink-200 text-black p-4'>View Details</button></Link>
+                            <Link to={`/singleToys/${category._id}`}> <button onClick={handleShow} className='btn bg-pink-200 text-black p-4'>View Details</button></Link>
   </div>
 </div>
                     ))}
@@ -83,7 +91,7 @@ const ShopByCategory = () => {
 
                 </TabPanel>
 
-                <TabPanel className='md:flex justify-center gap-5 my-7'>
+                <TabPanel className='flex md:flex-col justify-center gap-5 my-7'>
                     {OffRoadCar.slice(0, 2).map((category, index) => (
                         <div className="card table w-96 h-64 bg-pink-200 shadow-xl image-full">
                         <figure><img className='object-cover' src={category.image} alt="Shoes" /></figure>
@@ -92,13 +100,13 @@ const ShopByCategory = () => {
                                                <p className='text-xl font-bold '><span className='fonot-bold text-xl me-2 underline text-black'>Price</span>: {category.price}</p>
                                                   <p className='text-xl font-bold '><span className='fonot-bold text-xl me-2 underline text-black'>Rating</span>: {category.ratings}</p>
                                                   <p className='text-xl font-bold '><span className='fonot-bold text-xl me-2 underline text-black'>Category</span>: {category.subCategory}</p>
-                                                  <Link to={`/singleToys/${category._id}`}> <button className='btn bg-pink-200 text-black p-4'>View Details</button></Link>
+                                                  <Link to={`/singleToys/${category._id}`}> <button onClick={handleShow} className='btn bg-pink-200 text-black p-4'>View Details</button></Link>
                         </div>
                       </div>
                     ))}
                 </TabPanel>
 
-                <TabPanel className='md:flex justify-center gap-5 my-7'>
+                <TabPanel className='flex md:flex-col justify-center gap-5 my-7'>
                     {RemoteCar.slice(0, 2).map((category, index) => (
                         <div className="card table w-96 h-64 bg-pink-200 shadow-xl image-full">
                         <figure><img className='object-cover' src={category.image} alt="Shoes" /></figure>
@@ -107,11 +115,9 @@ const ShopByCategory = () => {
                                                <p className='text-xl font-bold '><span className='fonot-bold text-xl me-2 underline text-black'>Price</span>: {category.price}</p>
                                                   <p className='text-xl font-bold '><span className='fonot-bold text-xl me-2 underline text-black'>Rating</span>: {category.ratings}</p>
                                                   <p className='text-xl font-bold '><span className='fonot-bold text-xl me-2 underline text-black'>Category</span>: {category.subCategory}</p>
-                                                  {/* <Link to={`/singleToys/${category._id}`}> <button  className='btn bg-pink-200 text-black p-4'>View Details</button></Link> */}
+                                                  <Link to={`/singleToys/${category._id}`}> <button onClick={handleShow}  className='btn bg-pink-200 text-black p-4'>View Details</button></Link>
 
-                                                  {
-                                                    user ?<Link to={`/singleToys/${category._id}`}> <button  className='btn bg-pink-200 text-black p-4'>View Details</button></Link> : <button onClick={notify}>Notify!</button>
-                                                  }
+                                                  
                         </div>
                       </div>
                     ))}

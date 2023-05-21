@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="footer footer-center p-10 bg-pink-200 text-black rounded-xl">
+        <footer  className="footer footer-center p-10 bg-pink-200 text-black rounded-xl" data-aos="flip-left">
   <div>
         <img className='h-16 w-16 rounded-2xl' src="https://i.ibb.co/WftRC9n/yusuf-onuk-db5-Eg-Eev-AAQ-unsplash.jpg" alt="" />
     <p className="font-bold text-2xl">
