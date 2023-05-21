@@ -3,9 +3,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Provider/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ShopByCategory = () => {
-    const { loader } = useContext((AuthContext))
+    const { loader,user } = useContext((AuthContext))
     if (loader) {
         return <div className='text-center'>
             <progress className="progress w-56"></progress>
@@ -24,7 +26,11 @@ const ShopByCategory = () => {
 
     const SportsCar = categories.filter((item) => item.subCategory === 'sportsCar')
     const OffRoadCar = categories.filter((item) => item.subCategory === 'offRoadCar')
-    const RemoteCar = categories.filter((item) => item.subCategory === 'remoteCar')
+    const RemoteCar = categories.filter((item) => item.subCategory === 'remoteCar');
+
+
+
+    const notify = () => toast("Wow so easy!");
     return (
        
         <div>
@@ -101,7 +107,11 @@ const ShopByCategory = () => {
                                                <p className='text-xl font-bold '><span className='fonot-bold text-xl me-2 underline text-black'>Price</span>: {category.price}</p>
                                                   <p className='text-xl font-bold '><span className='fonot-bold text-xl me-2 underline text-black'>Rating</span>: {category.ratings}</p>
                                                   <p className='text-xl font-bold '><span className='fonot-bold text-xl me-2 underline text-black'>Category</span>: {category.subCategory}</p>
-                                                  <Link to={`/singleToys/${category._id}`}> <button className='btn bg-pink-200 text-black p-4'>View Details</button></Link>
+                                                  {/* <Link to={`/singleToys/${category._id}`}> <button  className='btn bg-pink-200 text-black p-4'>View Details</button></Link> */}
+
+                                                  {
+                                                    user ?<Link to={`/singleToys/${category._id}`}> <button  className='btn bg-pink-200 text-black p-4'>View Details</button></Link> : <button onClick={notify}>Notify!</button>
+                                                  }
                         </div>
                       </div>
                     ))}

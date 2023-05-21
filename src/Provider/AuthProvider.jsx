@@ -10,6 +10,7 @@ const googleProvider = new GoogleAuthProvider();
 const AuthProvider = ({children}) => {
     const [user,setUser] =useState(null);
     const [loader , setLoader] = useState(true);
+    // const [isLoggedIn,setIsLoggedIn]  = useState(false)
 
     const createUser = (email,password)=>{
         setLoader(true)
@@ -17,13 +18,16 @@ const AuthProvider = ({children}) => {
      };
      const loginUser = (email,password)=>{
          setLoader(true)
+        //  setIsLoggedIn(true)
          return signInWithEmailAndPassword(Auth,email,password);
      };
      const signInWithGoogle = () =>{
          setLoader(true)
+        //  setIsLoggedIn(true)
          return signInWithPopup(Auth,googleProvider)
      };
      const loggedOut = ()=>{
+        // setIsLoggedIn(false)
         return signOut(Auth)
     };
 

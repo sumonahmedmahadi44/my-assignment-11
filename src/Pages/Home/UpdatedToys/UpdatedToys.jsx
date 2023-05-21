@@ -52,7 +52,8 @@ const UpdatedToys = () => {
                             className=" border border-black p-2 bg-pink-200 "
                             {...register("image")}
                             placeholder="image link"
-                            defaultValue="https://images.pexels.com/photos/2528118/pexels-photo-2528118.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            defaultValue = {toys.image}
+                            // defaultValue="https://images.pexels.com/photos/2528118/pexels-photo-2528118.jpeg?auto=compress&cs=tinysrgb&w=600"
                             type="url"
                             
                         /></div>
@@ -74,12 +75,14 @@ const UpdatedToys = () => {
                             className="border border-black p-2 bg-pink-200 mt-4 me-4"
                             {...register("toyName")}
                             placeholder="Toy name"
+                            defaultValue = {toys.toyName}
                             type="name"
                         /></div>
                        <div><span className="font-bold text-xl">Toy Price :</span> <input
                             className="border border-black p-2 bg-pink-200 mt-4 me-4"
                             {...register("price")}
                             placeholder="Toy Price"
+                            defaultValue = {toys.price}
                             type="number"
                         /></div></div>
                         <div className='md:flex justify-around items-center'>
@@ -88,6 +91,7 @@ const UpdatedToys = () => {
                             value={user?.email}
                             {...register("postedBy")}
                             placeholder="Your email"
+                            defaultValue = {toys.postedBy}
                             type="email"
                         /></div>
                         <div><span className="font-bold text-xl">DisplayName :</span><input 
@@ -95,6 +99,7 @@ const UpdatedToys = () => {
                             value={user?.displayName}
                             {...register("userName")}
                             placeholder="Your name"
+                            defaultValue = {toys.userName}
                             type="name"
                         /></div>
                         </div>
@@ -105,12 +110,14 @@ const UpdatedToys = () => {
                             className="border border-black p-2 bg-pink-200 mt-4 me-4"
                             {...register("quantity")}
                             placeholder="Available Quantity"
+                            defaultValue = {toys.quantity}
                         /></div>
                         <div>
                         <span className="font-bold text-xl">Ratings :</span> <input
                             className="border border-black p-2 bg-pink-200 mt-4 me-4"
                             {...register("ratings")}
                             placeholder="Ratings"
+                            defaultValue = {toys.ratings}
                         />
                         </div>
                         </div>
@@ -120,6 +127,7 @@ const UpdatedToys = () => {
                             className="border w-full mb-4 border-black p-2 bg-pink-200 mt-4 me-4"
                             {...register("description")}
                             placeholder="description"
+                            defaultValue = {toys.description}
                         />
                         </div>
                         <div className='text-center'>

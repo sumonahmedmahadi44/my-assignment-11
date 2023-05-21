@@ -44,6 +44,7 @@ const AddToys = () => {
                             className=" border border-black p-2 bg-pink-200 "
                             {...register("image")}
                             placeholder="image link"
+                            required
                             type="url"
                             
                         /></div>
@@ -64,12 +65,14 @@ const AddToys = () => {
                         <div className='md:flex justify-around items-center'><div><span className="font-bold text-xl">Toy Name :</span> <input
                             className="border border-black p-2 bg-pink-200 mt-4 me-4"
                             {...register("toyName")}
+                            required
                             placeholder="Toy name"
                             type="name"
                         /></div>
                        <div><span className="font-bold text-xl">Toy Price :</span> <input
                             className="border border-black p-2 bg-pink-200 mt-4 me-4"
                             {...register("price")}
+                            required
                             placeholder="Toy Price"
                             type="number"
                         /></div></div>
@@ -78,6 +81,7 @@ const AddToys = () => {
                             className="border border-black p-2 bg-pink-200 mt-4 me-4"
                             value={user?.email}
                             {...register("postedBy")}
+                            required
                             placeholder="Your email"
                             type="email"
                         /></div>
@@ -85,6 +89,7 @@ const AddToys = () => {
                             className="border border-black p-2 bg-pink-200 mt-4 me-4"
                             value={user?.displayName}
                             {...register("userName")}
+                            required
                             placeholder="Your name"
                             type="name"
                         /></div>
@@ -95,12 +100,14 @@ const AddToys = () => {
                             <span className="font-bold text-xl">Quantity :</span><input
                             className="border border-black p-2 bg-pink-200 mt-4 me-4"
                             {...register("quantity")}
+                            required
                             placeholder="Available Quantity"
                         /></div>
                         <div>
                         <span className="font-bold text-xl">Ratings :</span> <input
                             className="border border-black p-2 bg-pink-200 mt-4 me-4"
                             {...register("ratings")}
+                            required
                             placeholder="Ratings"
                         />
                         </div>
@@ -110,12 +117,14 @@ const AddToys = () => {
                         <span className="font-bold text-xl">Description :</span> <input
                             className="border w-full mb-4 border-black p-2 bg-pink-200 mt-4 me-4"
                             {...register("description")}
+                            required
                             placeholder="description"
                         />
                         </div>
                         <div className='text-center'>
                         <input className="btn w-32 bg-amber-400 text-black p-2 " value="Add Toys" type="submit" />
                         </div>
+                        
                     </form>
                 </div>
                 
