@@ -20,7 +20,6 @@ const AddToys = () => {
         })
             .then((res) => res.json())
             .then((result) => {
-                console.log(result);
                 if(result.insertedId){
                     Swal.fire({
                       title: 'success!',
@@ -31,7 +30,7 @@ const AddToys = () => {
                     
                   }
             });
-        console.log(data);
+        
     };
     return (
         <div className="p-4 h-full flex justify-center items-center gap-10 mt-10">
