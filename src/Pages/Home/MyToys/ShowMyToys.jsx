@@ -22,10 +22,15 @@ const ShowMyToys = ({ myToy, index,handleDelete }) => {
                 {userName}
 
             </td>
+            
             <td className='bg-pink-200 border border-black'>{postedBy}</td>
             <td className='border border-black'>{price}</td>
             <td className='border border-black'>{ratings}</td>
             <td  className='bg-pink-200 border border-black'>{quantity}</td>
+            <td className='border border-black'>
+                {description}
+
+            </td>
             <th className='border border-black'>
                 <Link to={`/updatedToys/${_id}`}> <button className="btn bg-pink-200 text-black btn-xs">Update</button></Link>
 

@@ -66,7 +66,7 @@ const ShopByCategory = () => {
                 </TabList>
 
 
-                <TabPanel className='md:flex justify-center gap-5 my-7'>
+                <TabPanel className='flex md:flex-row justify-center gap-5 my-7'>
                     {SportsCar.slice(0, 2).map((category, index) => (
                         // <div>
                         //     <img src={category.subCategory} alt={''} />
@@ -91,7 +91,7 @@ const ShopByCategory = () => {
 
                 </TabPanel>
 
-                <TabPanel className='flex md:flex-col justify-center gap-5 my-7'>
+                <TabPanel className='flex md:flex-row justify-center gap-5 my-7'>
                     {OffRoadCar.slice(0, 2).map((category, index) => (
                         <div className="card table w-96 h-64 bg-pink-200 shadow-xl image-full">
                         <figure><img className='object-cover' src={category.image} alt="Shoes" /></figure>
@@ -106,7 +106,7 @@ const ShopByCategory = () => {
                     ))}
                 </TabPanel>
 
-                <TabPanel className='flex md:flex-col justify-center gap-5 my-7'>
+                <TabPanel className='flex md:flex-row justify-center gap-5 my-7'>
                     {RemoteCar.slice(0, 2).map((category, index) => (
                         <div className="card table w-96 h-64 bg-pink-200 shadow-xl image-full">
                         <figure><img className='object-cover' src={category.image} alt="Shoes" /></figure>

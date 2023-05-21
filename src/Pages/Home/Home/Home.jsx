@@ -4,6 +4,7 @@ import ShopByCategory from '../ShopByCatergory/ShopByCategory';
 import Gallery from './Gallery';
 import ExtraSec1 from './ExtraSec1';
 import ExtraSection2 from './ExtraSection2';
+import ExtraSection from './ExtraSection';
 
 const Home = () => {
     
@@ -12,8 +13,9 @@ const Home = () => {
             <Banner></Banner>
             <Gallery></Gallery>
          <ShopByCategory></ShopByCategory>
-         <ExtraSec1></ExtraSec1>
          <ExtraSection2></ExtraSection2>
+         <ExtraSection></ExtraSection>
+         <ExtraSec1></ExtraSec1>
             
         </div>
     );

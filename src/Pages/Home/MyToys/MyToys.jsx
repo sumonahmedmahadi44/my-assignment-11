@@ -73,11 +73,13 @@ const MyToys = () => {
                                 </th>
                                 <th className='bg-pink-200 border border-black'>Toy Photo</th>
                                 <th className='bg-pink-200 border border-black'>Toy Name</th>
+                                
                                 <th className='bg-pink-200 border border-black'>Seller Name</th>
                                 <th className='bg-pink-200 border border-black'>Seller email</th>
                                 <th className='bg-pink-200 border border-black'>Price</th>
                                 <th className='bg-pink-200 border border-black'>Rating</th>
                                 <th className='bg-pink-200 border border-black'>Quantity</th>
+                                <th className='bg-pink-200 border border-black'>DesCription</th>
                                 <th className='bg-pink-200 border border-black'>Update</th>
                                 <th className='bg-pink-200 border border-black'>Delete</th>
                             </tr>
