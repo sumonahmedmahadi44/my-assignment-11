@@ -52,7 +52,7 @@ const ShopByCategory = () => {
                 </TabList>
 
 
-                <TabPanel className='flex justify-center gap-5 my-7'>
+                <TabPanel className='md:flex justify-center gap-5 my-7'>
                     {SportsCar.slice(0, 2).map((category, index) => (
                         // <div>
                         //     <img src={category.subCategory} alt={''} />
@@ -77,29 +77,33 @@ const ShopByCategory = () => {
 
                 </TabPanel>
 
-                <TabPanel>
+                <TabPanel className='md:flex justify-center gap-5 my-7'>
                     {OffRoadCar.slice(0, 2).map((category, index) => (
-                        <div>
-                            <img src={category.subCategory} alt={''} />
-                            <h3>{category.userName}</h3>
-                            <p>Price: {category.price}</p>
-                            <p>Rating: {category.ratings}</p>
-                            <p>Category: {category.subCategory}</p>
-                            <Link to={`/singleToys/${category._id}`}> <button className='btn btn-xs btn-primary'>View Details</button></Link>
+                        <div className="card table w-96 h-64 bg-pink-200 shadow-xl image-full">
+                        <figure><img className='object-cover' src={category.image} alt="Shoes" /></figure>
+                        <div className="card-body">
+                        <h3 className='text-xl font-bold '><span className='fonot-bold text-xl me-2 underline text-black'>UserName</span>:  {category.userName}</h3>
+                                               <p className='text-xl font-bold '><span className='fonot-bold text-xl me-2 underline text-black'>Price</span>: {category.price}</p>
+                                                  <p className='text-xl font-bold '><span className='fonot-bold text-xl me-2 underline text-black'>Rating</span>: {category.ratings}</p>
+                                                  <p className='text-xl font-bold '><span className='fonot-bold text-xl me-2 underline text-black'>Category</span>: {category.subCategory}</p>
+                                                  <Link to={`/singleToys/${category._id}`}> <button className='btn bg-pink-200 text-black p-4'>View Details</button></Link>
                         </div>
+                      </div>
                     ))}
                 </TabPanel>
 
-                <TabPanel>
+                <TabPanel className='md:flex justify-center gap-5 my-7'>
                     {RemoteCar.slice(0, 2).map((category, index) => (
-                        <div>
-                            <img src={category.subCategory} alt={''} />
-                            <h3>{category.userName}</h3>
-                            <p>Price: {category.price}</p>
-                            <p>Rating: {category.ratings}</p>
-                            <p>Category: {category.subCategory}</p>
-                            <Link to={`/singleToys/${category._id}`}> <button className='btn btn-xs btn-primary'>View Details</button></Link>
+                        <div className="card table w-96 h-64 bg-pink-200 shadow-xl image-full">
+                        <figure><img className='object-cover' src={category.image} alt="Shoes" /></figure>
+                        <div className="card-body">
+                        <h3 className='text-xl font-bold '><span className='fonot-bold text-xl me-2 underline text-black'>UserName</span>:  {category.userName}</h3>
+                                               <p className='text-xl font-bold '><span className='fonot-bold text-xl me-2 underline text-black'>Price</span>: {category.price}</p>
+                                                  <p className='text-xl font-bold '><span className='fonot-bold text-xl me-2 underline text-black'>Rating</span>: {category.ratings}</p>
+                                                  <p className='text-xl font-bold '><span className='fonot-bold text-xl me-2 underline text-black'>Category</span>: {category.subCategory}</p>
+                                                  <Link to={`/singleToys/${category._id}`}> <button className='btn bg-pink-200 text-black p-4'>View Details</button></Link>
                         </div>
+                      </div>
                     ))}
                 </TabPanel>
             </Tabs>
